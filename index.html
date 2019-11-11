@@ -44,10 +44,10 @@
             <section>
                 <p>Selections</p>
                 <p class="fragment fade-down">Enter, Update and Exit</p>
-                <p class="fragment fade-down">Transitions</p>
                 <p class="fragment fade-down">Scales and Axes</p>
                 <p class="fragment fade-down">SVG elements</p>
                 <p class="fragment fade-down">Shapes</p>
+                <p class="fragment fade-down">Transitions</p>
             </section>
         </section>
 
@@ -240,16 +240,14 @@ var yScale = d3.scaleLinear()
                 </code>
             </pre>
 
-                <p style="margin: 0">Often used scales:</p>
+                <p style="margin: 0">Some often used scales:</p>
 
                 <pre style="margin: 0">
                 <code data-trim style="line-height: 1;">
-<!--continuous-->
-d3.scaleLinear()
+d3.scaleLinear() - Constructs a continuous linear scale where we can input
+                    data (domain) maps to the specified output (range).
 d3.scaleLog()
 d3.scaleTime()
-
-<!--ordinal-->
 d3.scaleBand()
                 </code>
             </pre>
@@ -279,6 +277,70 @@ d3.select('svg')
 
         </section>
 
+        <section data-id="b024ac32841eb398af18bcf804ab2e4b" class="has-light-background present" style="display: block;">
+            <section>SVG Elements</section>
+            <section>
+                <div style="display: inline-block; width: 24%; vertical-align: top">
+                    <div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 160px; height: 160px; left: 68px; top: 190px; display: inline-block; vertical-align: middle; text-align: center" data-block-id="0704811312f05112ce01086fd47a364b">
+                        <div class="sl-block-content" data-shape-type="rect" data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 11;" data-shape-stroke-color="white" data-shape-stroke-width="2">
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 160 160"><defs><clipPath id="shape-mask-984-1490921716630"><rect width="160" height="160" rx="0" ry="0"></rect></clipPath></defs><rect width="160" height="160" rx="0" ry="0" clip-path="url(#shape-mask-984-1490921716630)" class="shape-element" fill="rgba(0, 0, 0, 0)" stroke="white" stroke-width="4"></rect></svg>
+                        </div>
+                    </div>
+                    <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; left: 15px; top: 365px;" data-block-id="ac95515fe328cf8a50e3c03461a47d0e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: center;">
+                        <p><span style="font-size:0.5em"><bold>rect</bold><br>
+                        <bold>x</bold><span style="text-align:start">: x-coordinate of top-left</span><br>
+                        <bold>y</bold><span style="xtext-align:start">: y-coordinate of top-left</span><br>
+                        <bold>width</bold><br>
+                        <bold>height</bold></span></p>
+                    </div>
+                    </div>
+                </div>
+                <div style="display: inline-block; width: 24%; vertical-align: top">
+                    <div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 160px; height: 160px; left: 48px; top: 190px; display: inline-block; vertical-align: middle; text-align: center" data-block-id="0704811312f05112ce01086fd47a364b">
+                        <div class="sl-block-content" data-shape-type="circle" data-shape-fill-color="rgba(0, 0, 0, 0)" data-shape-stretch="true" style="z-index: 13;" data-shape-stroke-color="white" data-shape-stroke-width="2" data-fragment-index="0">
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" width="100%" height="100%" preserveAspectRatio="none" viewBox="0 0 160 160"><defs><clipPath id="shape-mask-985-1490921716634"><ellipse rx="80" ry="80" cx="80" cy="80"></ellipse></clipPath></defs><ellipse rx="80" ry="80" cx="80" cy="80" clip-path="url(#shape-mask-985-1490921716634)" class="shape-element" fill="rgba(0, 0, 0, 0)" stroke="white" stroke-width="4"></ellipse></svg>
+                        </div>
+                    </div>
+                    <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px;left: 15px; top: 365px;" data-block-id="ac95515fe328cf8a50e3c03461a47d0e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: center;">
+                        <p><span style="font-size:0.5em"><bold>circle</bold><br>
+                            <bold>cx</bold><span style="text-align:start">: x-coordinate of center</span><br>
+                            <bold>cy</bold><span style="xtext-align:start">: y-coordinate of center</span><br>
+                            <bold>r</bold><span style="xtext-align:start">: radius</span><br>
+                        </span></p>
+                    </div>
+                    </div>
+                </div>
+                <div style="display: inline-block; width: 24%; vertical-align: top">
+                    <div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 160px; height: 160px; left: 48px; top: 190px; display: inline-block; vertical-align: middle; text-align: center" data-block-id="0704811312f05112ce01086fd47a364b">
+                        <p>Hello!</p>
+                    </div>
+                    <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; left: 15px; top: 365px;" data-block-id="ac95515fe328cf8a50e3c03461a47d0e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: center;">
+                        <p><span style="font-size:0.5em"><strong>text</strong><br>
+                            <strong>x</strong><span style="text-align:start">: x-coordinate</span><br>
+                            <strong>y</strong><span style="text-align:start">: y-coordinate</span><br>
+                            <strong>dx</strong><span style="text-align:start">: x-coordinate offset</span><br>
+                            <strong>dy</strong><span style="text-align:start">: y-coordinate offset</span><br>
+                            <strong>text-anchor</strong><span style="text-align:start">: horizontal text alignment</span></span>
+                        </p>
+                    </div>
+                    </div>
+                </div>
+                <div style="display: inline-block; width: 24%; vertical-align: top">
+                    <div class="sl-block" data-block-type="shape" style="min-width: 4px; min-height: 4px; width: 160px; height: 160px; top: 190px; display: inline-block; vertical-align: middle; text-align: center" data-block-id="0704811312f05112ce01086fd47a364b">
+                        <div class="sl-block-content current-fragment" data-line-x1="3" data-line-y1="180" data-line-x2="163" data-line-y2="20" data-line-color="#000000" data-line-start-type="none" data-line-end-type="none" style="z-index: 17;" data-fragment-index="2">
+                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" preserveAspectRatio="xMidYMid" width="160" height="160" viewBox="3 20 160 160"><line stroke="rgba(0,0,0,0)" stroke-width="15" x1="3" y1="180" x2="163" y2="20"></line><line stroke="white" stroke-width="2" x1="3" y1="180" x2="163" y2="20"></line></svg>
+                        </div>
+                    </div>
+                    <div class="sl-block" data-block-type="text" style="height: auto; min-width: 30px; min-height: 30px; left: 15px; top: 365px;" data-block-id="ac95515fe328cf8a50e3c03461a47d0e"><div class="sl-block-content" data-placeholder-tag="p" data-placeholder-text="Text" style="z-index: 12; text-align: center;">
+                        <p><span style="font-size:0.5em"><strong>path</strong><br>
+                            <strong>d</strong><span style="text-align:start">: path to follow</span></span>
+                        </p>
+                        <p><span style="font-size:0.5em">Moveto, Lineto, Curveto, Arcto</span></p>
+                    </div>
+                    </div>
+                </div>
+            </section>
+        </section>
 
         <section>
             <section>
@@ -322,7 +384,6 @@ d3.select('svg')
 
 
         </section>
-
         <section>
             <img src="./img/thx.gif" alt="">
         </section>
