@@ -1,69 +1,349 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>reveal.js</title>
 
-		<link rel="stylesheet" href="css/reset.css">
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/black.css">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/monokai.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/monokai.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>
-					D3 Data Visualization
-					<iframe data-src="https://bl.ocks.org/mbostock/raw/1062544/" data-preload></iframe>
-				</section>
-				<section data-markdown>
-					<textarea data-template>
-		## What is D3.js?
-						
-•	Data-Driven Documents
-						
-•	JavaScript library for manipulating documents based on data
-						
-•	It allows to bind data to a Document Object Model (DOM)
-						
-•	It helps to bring data to life using HTML, SVG, and CSS
-						
-•	It’s functional style allows code reuse
-						
-•	It is extremely fast, supporting large datasets and dynamic behaviors for interaction and animation
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match(/print-pdf/gi) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section><h3>D3 Data Visualization</h3></section>
 
-					</textarea>
-				</section>
-			</div>
-		</div>
+        <section>
+            <section>WHAT IS D3.js?</section>
+            <section>
+                <p>Data-Driven Documents</p>
+                <p class="fragment fade-down">JavaScript library for manipulating documents based on data</p>
+                <p class="fragment fade-down">It allows to bind data to a Document Object Model (DOM)</p>
+                <p class="fragment fade-down">It helps to bring data to life using HTML, SVG, and CSS</p>
+                <p class="fragment fade-down">It’s functional style allows code reuse</p>
+                <p class="fragment fade-down">It is extremely fast, supporting large datasets and dynamic behaviors for
+                    interaction and animation</p>
+            </section>
+        </section>
+        <section>
+            <section>MAIN D3 ENTITIES</section>
+            <section>
+                <p>Selections</p>
+                <p class="fragment fade-down">Enter, Update and Exit</p>
+                <p class="fragment fade-down">Transitions</p>
+                <p class="fragment fade-down">Scales and Axes</p>
+                <p class="fragment fade-down">SVG elements</p>
+                <p class="fragment fade-down">Shapes</p>
+            </section>
+        </section>
 
-		<script src="js/reveal.js"></script>
+        <section>
+            <section>SELECTIONS</section>
+            <section>
+            <pre style="display: inline-block; width: 50%; vertical-align: middle">
+                <code data-trim class="stretch">
+  <svg>
+    <rect/>
+    <rect/>
+    <rect/>
+    <rect/>
+    <rect/>
+  </svg>
+  <script>
+    var data = [100, 250, 175, 200, 120];
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true }
-				]
-			});
-		</script>
-	</body>
+    d3.selectAll('rect')
+      .data(data)
+      .attr('x', (d, i) => i * rectWidth)
+      .attr('y', d => height - d)
+      .attr('width', rectWidth)
+      .attr('height', d => d)
+      .attr('fill', 'blue')
+      .attr('stroke', '#fff');
+
+  </script>
+
+                </code>
+            </pre>
+                <div style="display: inline-block; width: 45%; vertical-align: middle">
+                    <img src="./img/1.png" alt="">
+                </div>
+            </section>
+
+            <section>
+                <div style="display: inline-block; width: 45%; vertical-align: middle">
+                    <img src="./img/2.png" alt="" style="border: none;">
+                </div>
+                <div style="display: inline-block; width: 45%; vertical-align: middle">
+                    <p class="fragment fade-down">5 rectangle elements</p>
+                    <p class="fragment fade-down" style="margin: 15px 0">select all rectangle elements that exist</p>
+                    <img src="./img/3.png" alt="">
+                </div>
+            </section>
+
+            <section>
+                <div style="display: inline-block; width: 45%; vertical-align: middle">
+                    <img src="./img/4.png" alt="" style="border: none;">
+                </div>
+                <div style="display: inline-block; width: 45%; vertical-align: middle">
+                    <p class="fragment fade-down">"bind" data to the selections</p>
+                    <img src="./img/5.png" alt="">
+                </div>
+            </section>
+
+
+            <section>
+                <div style="display: inline-block; width: 45%; vertical-align: middle">
+                    <img src="./img/6.png" alt="" style="border: none;">
+                </div>
+                <div style="display: inline-block; width: 45%; vertical-align: middle">
+                    <p class="fragment fade-down">Loop through each rectangle selection
+                        <br> Get passed in (data, index)</p>
+                    <img src="./img/7.png" alt="">
+                </div>
+            </section>
+        </section>
+
+        <section>
+            <section>ENTER, UPDATE AND EXIT</section>
+            <section>
+            <pre style="display: inline-block; width: 50%; vertical-align: middle">
+                <code data-trim class="stretch">
+  <svg></svg>
+  <script>
+    var data = [100, 250, 175, 200, 120];
+
+    var svg = d3.select('svg');
+    svg.selectAll('rect')
+      .data(data)
+      .enter().append('rect')
+      .attr('x', (d, i) => i * rectWidth)
+      .attr('y', d => height - d)
+      .attr('width', rectWidth)
+      .attr('height', d => d)
+      .attr('fill', 'blue')
+      .attr('stroke', '#fff');
+
+  </script>
+
+                </code>
+            </pre>
+                <div style="display: inline-block; width: 45%; vertical-align: middle">
+                    <img src="./img/1.png" alt="">
+                </div>
+            </section>
+
+            <section>
+                <div style="display: inline-block; width: 50%; vertical-align: middle">
+                    <img src="./img/8.png" alt="" style="border: none;">
+                </div>
+                <div style="display: inline-block; width: 45%; vertical-align: middle">
+                    <p>No rectangle elements??!</p>
+                    <p class="fragment fade-down" style="margin: 15px 0">So what are we even selecting?</p>
+                    <p class="fragment fade-down"> - An empty selection</p>
+                </div>
+            </section>
+
+            <section>
+                <div style="display: inline-block; width: 50%; vertical-align: middle">
+                    <img src="./img/9.png" alt="" style="border: none;">
+                </div>
+                <div style="display: inline-block; width: 45%; vertical-align: middle">
+                    <p>"Magic"</p>
+                </div>
+            </section>
+
+
+            <section>
+                <pre style="display: inline-block; width: 50%; vertical-align: middle">
+                    <code data-trim class="stretch">
+  <!-- update selection -->
+  var bars = svg.selectAll('rect')
+    .data(data, d => d);
+
+  <!-- exit -->
+  bars.exit().remove();
+
+  <!-- enter -->
+  var enter = bars.enter().append('rect')
+    .attr('width', rectWidth)
+    .attr('stroke', '#fff');
+
+  <!-- enter + update -->
+  bars = enter.merge(bars)
+    .attr('x', (d, i) => i * rectWidth)
+    .attr('y', d => height - d)
+    .attr('height', d => d)
+    .attr('fill', d => colors(d));
+                    </code>
+                </pre>
+                <div style="display: inline-block; width: 45%;vertical-align: middle;">
+                    <p class="fragment fade-down">Key function: controls which datum is assigned to which element</p>
+                </div>
+            </section>
+
+
+        </section>
+
+
+        <section>
+            <section>SCALES & AXES</section>
+            <section>
+                <div style="display: inline-block; width: 45%; vertical-align: middle">
+            <pre>
+                <code data-trim class="stretch">
+    d3.scaleLinear()
+    .domain([min, max]) // input
+    .range([min, max]); // output
+
+                </code>
+            </pre>
+                    <p>scale: mapping from
+
+                        data attributes (domain)
+
+                        to display (range)
+                    </p>
+                </div>
+                <div style="display: inline-block; width: 45%; vertical-align: middle">
+                    <img src="./img/13.png" alt="">
+                </div>
+            </section>
+
+            <section>
+            <pre style="margin: 0;">
+                <code data-trim style="line-height: 1;">
+<!--get min/max-->
+var min = d3.min(data, d => d[city]);
+var max = d3.max(data, d => d[city]);
+
+<!--or use extent, which gives back [min, max]-->
+var extent = d3.extent(data, d => d[city]);
+
+var yScale = d3.scaleLinear()
+  .domain(extent)
+  .range([height, 0]);
+                </code>
+            </pre>
+
+                <p style="margin: 0">Often used scales:</p>
+
+                <pre style="margin: 0">
+                <code data-trim style="line-height: 1;">
+<!--continuous-->
+d3.scaleLinear()
+d3.scaleLog()
+d3.scaleTime()
+
+<!--ordinal-->
+d3.scaleBand()
+                </code>
+            </pre>
+
+            </section>
+
+            <section>
+                </pre>
+                <pre style="margin: 0;">
+                <code data-trim style="line-height: 1;">
+var yAxis = d3.axisLeft()
+    .scale(yScale); // pass in a scale
+
+d3.select('svg')
+    // create a group element we can translate
+    // so that the axis will be visible in SVG
+    .append('g')
+    .attr('transform', 'translate(40, 20)')
+    // selection.call(yAxis) is the same as yAxis(selection)
+    // and an axis will be created within the selection
+    .call(yAxis);
+                </code>
+            </pre>
+                <img src="./img/14.png" alt="" style="border: none; height: 40vh">
+            </section>
+
+
+        </section>
+
+
+        <section>
+            <section>
+                TRANSITIONS
+                <br>
+                <br>
+                Emphasize changes in state
+            </section>
+            <section>
+                <div style="display: inline-block; width: 45%; vertical-align: middle">
+                    <img src="./img/10.gif" alt="">
+                </div>
+                <div style="display: inline-block; width: 45%; vertical-align: middle">
+                    <img src="./img/10a.gif" alt="">
+                </div>
+            </section>
+
+            <section>
+                <div style="display: inline-block; width: 50%; vertical-align: middle">
+                    <img src="./img/11.png" alt="" style="border: none;">
+                </div>
+                <div style="display: inline-block; width: 45%; vertical-align: middle">
+                    <p>Define transition, syncs animation everywhere it's used</p>
+                    <p class="fragment fade-down" style="margin: 15px 0">Animate height down to 0 before removing</p>
+                    <p class="fragment fade-down"> Animate remaining < rect >'s height to their next state</p>
+                </div>
+            </section>
+
+            <section>
+                <div style="display: inline-block; width: 50%; vertical-align: middle">
+                    <img src="./img/12.png" alt="" style="border: none;">
+                </div>
+                <div style="display: inline-block; width: 45%; vertical-align: middle">
+                    <p class="fragment fade-down"> Attributes set before .transition(): state <b
+                            style="color: red;">A</b> to transition <b style="color: red;">from</b></p>
+                    <p class="fragment fade-down"> If attributes not specified for A, d3 extrapolates from default</p>
+                    <p class="fragment fade-down"> Everything after .transition(): state <b style="color: red;">B</b> to
+                        transition <b style="color: red;">to</b></p>
+                </div>
+            </section>
+
+
+        </section>
+
+        <section>
+            <img src="./img/thx.gif" alt="">
+        </section>
+
+    </div>
+</div>
+
+<script src="js/reveal.js"></script>
+
+<script>
+  // More info about config & dependencies:
+  // - https://github.com/hakimel/reveal.js#configuration
+  // - https://github.com/hakimel/reveal.js#dependencies
+  Reveal.initialize({
+    dependencies: [
+      {src: 'plugin/markdown/marked.js'},
+      {src: 'plugin/markdown/markdown.js'},
+      {src: 'plugin/notes/notes.js', async: true},
+      {src: 'plugin/highlight/highlight.js', async: true}
+    ]
+  });
+</script>
+</body>
 </html>
